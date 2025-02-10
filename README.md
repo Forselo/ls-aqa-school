@@ -1,0 +1,1 @@
+https://confluence.sportsapi.ru/x/HMNTF
