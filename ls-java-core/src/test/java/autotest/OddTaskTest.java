@@ -1,8 +1,11 @@
-package ru.ls.qa.school.core;
+package autotest;
 
 import org.junit.Test;
+import ru.ls.qa.school.core.OddTask;
 
 import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class OddTaskTest {
     @Test
@@ -20,4 +23,5 @@ public class OddTaskTest {
         assertTrue(OddTask.isOdd(Integer.MIN_VALUE + 1));
         assertFalse(OddTask.isOdd(Integer.MIN_VALUE));
     }
+
 }

@@ -1,9 +1,10 @@
-package ru.ls.qa.school.core;
+package autotest;
 
+import org.junit.jupiter.api.Test;
+import ru.ls.qa.school.core.Point;
 
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import static org.junit.Assert.assertEquals;
 
 public class PointTest {
     @Test
