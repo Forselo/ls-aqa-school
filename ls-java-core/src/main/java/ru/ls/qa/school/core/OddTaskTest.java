@@ -20,5 +20,4 @@ public class OddTaskTest {
         assertTrue(OddTask.isOdd(Integer.MIN_VALUE + 1));
         assertFalse(OddTask.isOdd(Integer.MIN_VALUE));
     }
-
 }

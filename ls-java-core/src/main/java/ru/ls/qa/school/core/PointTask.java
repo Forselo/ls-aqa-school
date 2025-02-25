@@ -9,5 +9,4 @@ public class PointTask {
 
         System.out.println("Расстояние между " + point1 + " и " + point2 + " равно: " + distance);
     }
-
 }
