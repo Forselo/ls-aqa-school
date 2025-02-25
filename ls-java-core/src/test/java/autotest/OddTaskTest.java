@@ -1,11 +1,10 @@
 package autotest;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import ru.ls.qa.school.core.OddTask;
+import ru.ls.qa.school.core.Point;
 
-import static org.junit.Assert.*;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class OddTaskTest {
     @Test
