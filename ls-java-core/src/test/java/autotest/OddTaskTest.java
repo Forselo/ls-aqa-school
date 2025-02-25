@@ -2,7 +2,6 @@ package autotest;
 
 import org.junit.jupiter.api.Test;
 import ru.ls.qa.school.core.OddTask;
-import ru.ls.qa.school.core.Point;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,6 +14,7 @@ public class OddTaskTest {
         assertFalse(OddTask.isOdd(0));
         assertTrue(OddTask.isOdd(-5));
     }
+
     @Test
     public void testIsOdd2() {
         assertTrue(OddTask.isOdd(Integer.MAX_VALUE));
