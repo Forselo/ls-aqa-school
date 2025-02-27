@@ -12,6 +12,7 @@ public class PointTest {
         Point p2 = new Point(4, 6);
 
         double expectedDistance = 5.0;
+        assertEquals(expectedDistance, p1.distance(p2), 0.001);
     }
 
     @Test
