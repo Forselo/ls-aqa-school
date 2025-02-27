@@ -1,4 +1,4 @@
-package autotest;
+package ru.ls.qa.school.core.autotest;
 
 import org.junit.jupiter.api.Test;
 import ru.ls.qa.school.core.OddTask;
