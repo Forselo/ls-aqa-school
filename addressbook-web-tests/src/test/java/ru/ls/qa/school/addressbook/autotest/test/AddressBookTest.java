@@ -56,7 +56,6 @@ public class AddressBookTest {
     }
 
     private void submitContactForm() {
-
         $(byCssSelector("input[type='submit']")).click();
     }
 
