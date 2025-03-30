@@ -1,22 +1,14 @@
 package ru.ls.qa.school.addressbook.autotest.app;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selectors.*;
+import com.codeborne.selenide.SelenideElement;
+
 
 public class BaseHelper {
-    protected void clickByName(String name) {
-        $(byName(name)).click();
+    protected void click(SelenideElement element) {
+        element.click();
     }
 
-    protected void setValueByName(String name, String value) {
-        $(byName(name)).setValue(value);
-    }
-
-    protected void clickByLinkText(String linkText) {
-        $(byLinkText(linkText)).click();
-    }
-
-    protected void clickByXpath(String xpath) {
-        $(byXpath(xpath)).click();
+    protected void setValue(SelenideElement element, String value) {
+        element.setValue(value);
     }
 }

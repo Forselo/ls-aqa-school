@@ -7,11 +7,11 @@ import ru.ls.qa.school.addressbook.autotest.model.ContactData;
 
 public class AddressBookTest extends TestBase {
 
+
     @Test
     public void testAddNewContact() {
-        app.login("admin", "secret");
+        app.getAuthHelper().login("admin", "secret");
         app.getNavigationHelper().goToAddNewContact();
-
         ContactData contact = new ContactData(
                 "Семен",
                 "Семенович",
@@ -23,6 +23,6 @@ public class AddressBookTest extends TestBase {
 
         app.getContactHelper().fillContactForm(contact);
         app.getContactHelper().submitContactForm();
-        app.logout();
+        app.getAuthHelper().logout();
     }
 }

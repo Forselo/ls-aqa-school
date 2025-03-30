@@ -2,14 +2,15 @@ package ru.ls.qa.school.addressbook.autotest.app;
 
 import com.codeborne.selenide.Configuration;
 
-import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Selectors.*;
+import static com.codeborne.selenide.Selenide.open;
+
 
 public class ApplicationManager {
 
     private NavigationHelper navigationHelper;
     private GroupHelper groupHelper;
     private ContactHelper contactHelper;
+    private AuthHelper authHelper;
 
     public void init() {
         Configuration.browser = "chrome";
@@ -17,6 +18,7 @@ public class ApplicationManager {
         navigationHelper = new NavigationHelper();
         groupHelper = new GroupHelper();
         contactHelper = new ContactHelper();
+        authHelper = new AuthHelper();
     }
 
 
@@ -32,13 +34,8 @@ public class ApplicationManager {
         return contactHelper;
     }
 
-    public void login(String username, String password) {
-        $(byName("user")).setValue(username);
-        $(byName("pass")).setValue(password);
-        $(byCssSelector("input[type='submit']")).click();
+    public AuthHelper getAuthHelper() {
+        return authHelper;
     }
 
-    public void logout() {
-        $(byLinkText("Logout")).click();
-    }
 }

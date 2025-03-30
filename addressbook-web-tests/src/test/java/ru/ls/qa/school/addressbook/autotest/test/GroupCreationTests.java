@@ -20,10 +20,10 @@ public class GroupCreationTests {
 
     @Test
     public void testCreateGroup() {
-        app.login("admin", "secret");
+        app.getAuthHelper().login("admin", "secret");
         app.getNavigationHelper().navigateToGroups();
         app.getGroupHelper().createGroup(new GroupData("test3", "test3", "test3"));
-        app.logout();
+        app.getAuthHelper().logout();
     }
 
     @AfterEach
