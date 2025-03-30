@@ -19,6 +19,7 @@ public class ApplicationManager {
         contactHelper = new ContactHelper();
     }
 
+
     public NavigationHelper getNavigationHelper() {
         return navigationHelper;
     }
