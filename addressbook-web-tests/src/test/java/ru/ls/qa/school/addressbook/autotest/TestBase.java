@@ -5,7 +5,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import ru.ls.qa.school.addressbook.autotest.app.ApplicationManager;
 
-import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public abstract class TestBase {
@@ -25,13 +24,4 @@ public abstract class TestBase {
         closeWebDriver();
     }
 
-    protected void login(String username, String password) {
-        $(byName("user")).setValue(username);
-        $(byName("pass")).setValue(password);
-        $(byXpath("//input[@value='Login']")).click();
-    }
-
-    protected void logout() {
-        $(byLinkText("Logout")).click();
-    }
 }
