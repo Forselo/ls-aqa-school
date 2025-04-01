@@ -10,15 +10,38 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class GroupHelper extends BaseHelper {
 
+    private static final String GROUP_NAME_INPUT_NAME = "group_name";
+    private static final String GROUP_HEADER_INPUT_NAME = "group_header";
+    private static final String GROUP_FOOTER_INPUT_NAME = "group_footer";
+    private static final String SUBMIT_BUTTON_XPATH = "//div[@id='content']/form/input[4]";
+    private static final String SUBMIT_INPUT_NAME = "submit";
+
+
+    private SelenideElement getGroupNameInput() {
+        return $(byName(GROUP_NAME_INPUT_NAME));
+    }
+
+    private SelenideElement getGroupHeaderInput() {
+        return $(byName(GROUP_HEADER_INPUT_NAME));
+    }
+
+    private SelenideElement getGroupFooterInput() {
+        return $(byName(GROUP_FOOTER_INPUT_NAME));
+    }
+
+    private SelenideElement getFirstSubmitButton() {
+        return $(byXpath(SUBMIT_BUTTON_XPATH));
+    }
+
+    private SelenideElement getSubmitButton() {
+        return $(byName(SUBMIT_INPUT_NAME));
+    }
+
     public void createGroup(GroupData groupData) {
-        SelenideElement submitButton = $(byXpath("//div[@id='content']/form/input[4]"));
-        click(submitButton);
-
-        setValue($(byName("group_name")), groupData.getGroupName());
-        setValue($(byName("group_header")), groupData.getGroupHeader());
-        setValue($(byName("group_footer")), groupData.getGroupFooter());
-
-        SelenideElement submit = $(byName("submit"));
-        click(submit);
+        click(getFirstSubmitButton());
+        setValue(getGroupNameInput(), groupData.getGroupName());
+        setValue(getGroupHeaderInput(), groupData.getGroupHeader());
+        setValue(getGroupFooterInput(), groupData.getGroupFooter());
+        click(getSubmitButton());
     }
 }
