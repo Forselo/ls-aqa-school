@@ -1,27 +1,23 @@
 package ru.ls.qa.school.addressbook.autotest;
 
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.AfterEach;
 import ru.ls.qa.school.addressbook.autotest.app.ApplicationManager;
-
-import static com.codeborne.selenide.Selenide.*;
+import ru.ls.qa.school.addressbook.autotest.pages.PageManager;
 
 public abstract class TestBase {
-
     protected ApplicationManager app;
+    protected PageManager pages;
 
     @BeforeEach
     public void setUp() {
-        Configuration.browser = "chrome";
-        open("http://localhost/addressbook/");
         app = new ApplicationManager();
         app.init();
+        pages = new PageManager(app);
     }
 
     @AfterEach
     public void tearDown() {
-        closeWebDriver();
+        app.close();
     }
-
 }
