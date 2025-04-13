@@ -41,9 +41,6 @@ public class ApplicationManager {
         return authHelper;
     }
 
-    public void close() {
-    }
-
     public PageManager getPageManager() {
         return pageManager;
     }

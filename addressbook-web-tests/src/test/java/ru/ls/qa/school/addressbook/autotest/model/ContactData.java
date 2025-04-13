@@ -1,9 +1,11 @@
 package ru.ls.qa.school.addressbook.autotest.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 @AllArgsConstructor
 public class ContactData {
     private String firstName;
@@ -13,3 +15,4 @@ public class ContactData {
     private String homePhone;
     private String mobilePhone;
 }
+
