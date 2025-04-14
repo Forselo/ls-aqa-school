@@ -1,6 +1,7 @@
 package ru.ls.qa.school.addressbook.autotest.app;
 
 import com.codeborne.selenide.Configuration;
+import ru.ls.qa.school.addressbook.autotest.pages.PageManager;
 
 import static com.codeborne.selenide.Selenide.open;
 
@@ -11,6 +12,7 @@ public class ApplicationManager {
     private GroupHelper groupHelper;
     private ContactHelper contactHelper;
     private AuthHelper authHelper;
+    private PageManager pageManager;
 
     public void init() {
         Configuration.browser = "chrome";
@@ -19,6 +21,7 @@ public class ApplicationManager {
         groupHelper = new GroupHelper();
         contactHelper = new ContactHelper();
         authHelper = new AuthHelper();
+        pageManager = new PageManager(this);
     }
 
 
@@ -36,6 +39,10 @@ public class ApplicationManager {
 
     public AuthHelper getAuthHelper() {
         return authHelper;
+    }
+
+    public PageManager getPageManager() {
+        return pageManager;
     }
 
 }

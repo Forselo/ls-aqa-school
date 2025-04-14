@@ -12,17 +12,20 @@ public class AddressBookTest extends TestBase {
     public void testAddNewContact() {
         app.getAuthHelper().login("admin", "secret");
         app.getNavigationHelper().goToAddNewContact();
-        ContactData contact = new ContactData(
-                "Семен",
-                "Семенович",
-                "Семос",
-                "Sit",
-                "7956847949",
-                "7979543684797"
-        );
+        ContactData contact = ContactData.builder()
+                .firstName("Семен")
+                .middleName( "Семенович")
+                .lastName( "Семос")
+                .address( "Sit")
+                .homePhone("7956847949")
+                .mobilePhone("7979543684797")
+                .build();
 
-        app.getContactHelper().fillContactForm(contact);
-        app.getContactHelper().submitContactForm();
+        app.getPageManager().getContactPage()
+                .fillContactForm(contact)
+                .submit();
+
         app.getAuthHelper().logout();
     }
+
 }
